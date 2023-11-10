@@ -1,6 +1,6 @@
 // This is our javascript file for our application
-const getClass = document.getElementById("Whatever the class ID will be")
-const getRace = document.getElementById("whateve the race ID is")
+const getUserClass = document.getElementById("class-select")
+const getUserRace = document.getElementById("race-select")
 
 function getApi() {
     let Url = "https://www.dnd5eapi.co/api/ability-scores/con"
@@ -14,3 +14,19 @@ function getApi() {
 )}
 
 getApi()
+
+
+function getClass() {
+  
+    let classUrl = "https://www.dnd5eapi.co/api/classes/" + getClass;
+    console.log(classUrl)
+
+}
+
+function getRace() {
+    let raceUrl = "https://www.dnd5eapi.co/api/races/" + getRace
+    console.log(raceUrl)
+}
+
+
+
