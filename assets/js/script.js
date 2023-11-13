@@ -3,20 +3,7 @@ const getUserClass = document.getElementById("class-select")
 const getUserRace = document.getElementById("race-select")
 const quoteBox = document.getElementById("quote-box")
 const formEl = document.getElementById("select-form")
-
-function getApi() {
-    let Url = "https://www.dnd5eapi.co/api/ability-scores/con"
-
-    fetch(Url)
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(data) {
-    console.log(data)}
-)}
-
-getApi()
-
+let classApiResults, raceApiResults;
 
 function getClass(job) {
   
