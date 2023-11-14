@@ -5,34 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API Data Display</title>
-    <link rel="stylesheet" type="text/css" href="./assets/css/test.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 
-<body>
-    <header id="page-header">
-        <h1>Dungeons & Dragons Character Stat Compiler</h1>
-        <h2>For 5th Edition</h2>
-    </header>
+<header id="page-header" class="is-italic">
+    <h1>Dungeons & Dragons Character Stat Compiler</h1>
+    <h2>For 5th Edition</h2>
+</header>
 
+<body>
     <div id="content-container">
         <section id="stats-quote-container">
-            <section id="stats-box"> <!--Display examples for stats box-->
-                <ul>
-                    <li><span id="variable1">Class:</span></li>
-                    <li><span id="variable2">Race:</span></li>
-                    <li><span id="variable3">Bonus:</span></li>
+            <section id="stats-box" class="box">
+                <h3 class="title is-4 has-text-success">Stats</h3>
+                <ul class="content">
+                    <li><span id="variable1" class="has-text-green">Class:</span></li><!--Display examples for stats box-->
+                    <li><span id="variable2" class="has-text-green">Race:</span></li>
+                    <li><span id="variable3" class="has-text-green">Bonus:</span></li>
                 </ul>
             </section>
         </section>
-        <section id="quote-box">
-            <p id="quote"></p>
-            <p id="author"></p>
+        <section id="quote-box" class="box">
+            <h3 class="title is-4 has-text-success">Quote</h3>
+            <p id="title" class="has-text-weight-bold"></p>
+            <p id="author" class="has-text-weight-bold"></p>
             <br>
-            <p id="quote"></p>
-          
+            <p id="quote" class="is-italic"></p>
+        </section>
+        <section id="additional-info-box" class="box">
+            <h3 class="title is-4 has-text-success">Additional Information</h3>
+            <ul class="content">
+                <li><span id="additional-info1" class="has-text-green">Item:</span></li>
+                <li><span id="additional-info2" class="has-text-green">Skills:</span></li>
+                <li><span id="additional-info3" class="has-text-green">Spell slots:</span></li>
+            </ul>
         </section>
     </div>
-    <form>
+    <form id="select-form">
         <div id="select-box">
             <div class="select-group">
                 <label for="race-select">Race:</label>
@@ -67,9 +77,7 @@
             </div>
             <div id="submit-box">
                 <input type="submit" value="Submit" id="submit-button">
-                <!--Moved submit button to be on top of class and race dropdowns-->
             </div>
-
     </form>
     </div>
 </body>
