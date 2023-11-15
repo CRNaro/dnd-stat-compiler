@@ -1,31 +1,36 @@
-
 /* This is our main stylesheet */   
 /*Ex. adding downloaded font files to this project*/
 @font-face {
-    font-family: 'Roboto'; /*add font name*/
+    font-family: 'Arial, sans-serif'; /*add font name*/
     src: url(); /*add path to font file*/
 }
 
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    margin: 20px;
+    height: 100%;
     /* background image */
     background-image: url('https://images.ctfassets.net/swt2dsco9mfe/2tUJTVIdSiWIs9uNn9VGoC/2d70a1b9de8a84aba8c248da04fa991d/1280x960-terrain-wa.jpg?q=70&fit=thumb&w=1280&h=960&fm=avif'); 
     background-size: cover; /* Ensures the image covers the entire background */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-repeat: no-repeat;
+    min-height: 150vh; /* Prevents the image from repeating */
 }
 
 #page-header {
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     background-color: #64a362;
+    height: 288px;
+    max-width: 1088px;
+    margin-left: 160px;
     padding: 10px;
     border: 2px solid #000000;
+    opacity: 0.9;
 }
 
 #page-header h1, #page-header h2 {
     margin: 45px;
     color: #2f492f; /* text color */
+    font-size: 42px;
 }
 
 #content-container {
@@ -35,7 +40,10 @@ body {
 
 #stats-quote-container {
     display: flex;
-    gap: 55px; /* Adjust the space between stats and quote boxes */
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Adjust the space between stats and quote boxes */
+    height: auto
 }
 
 /* Added styles to stats box */
@@ -44,9 +52,15 @@ body {
     padding: 10px;
     border: 2px solid #070606;
     margin-bottom: 20px;
-    max-width: 300px;
+    max-width: 700px;
     margin-right: 10px;
 }
+
+#stats-box h3 {
+    color: #a1d6a6;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
 
 #stats-box ul {
     list-style-type: none;
@@ -56,45 +70,105 @@ body {
 #stats-box li {
     margin-bottom: 10px;
     padding: 5px;
-    background-color: #fff;
+    background-color: #c7dfc8;
     border: 1px solid #ddd;
     border-radius: 5px;
+    color: #4b6e4e;
 }
 
-#select-box {
-    margin-left: 5px;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-}
-
-.select-group {
+#additional-info-box {
+    background-color: #17973d;
+    padding: 10px;
+    border: 2px solid #0c0a0a;
+    max-width: 700px;
+    color: #4b6e4e;
+  }
+  
+  #additional-info-box h3 {
+    color: #a1d6a6;
+    font-size: 18px;
     margin-bottom: 10px;
-}
-
-#race-select {
-    margin-top: 10px;
-    width: 102px;
-}
-
-#class-select {
-    margin-bottom: 10px; /* Add margin between selects */
-    width: 91px; /* Adjust width as needed */
-}
-
-#submit-button {
-    margin: 2px; /* Separate from the selects */
-    border-width: 2px;
-}
-#submit-box {
-    margin-top: 20px;
-}
+  }
+  
+  #additional-info-box ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #additional-info-box li {
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #c7dfc8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
 
 #quote-box {
     background-color: #17973d;
     padding: 10px;
     border: 2px solid #0c0a0a;
+    margin-right: 25px;
+    margin-left: 25px;
+    max-width: 1000px; /* Adjust the width as needed */
+    min-width: 300px;
+    color: #a1d6a6;
+}
+
+#quote-box h3 {
+    color: #a1d6a6;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+#select-box {
+    margin-left: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.select-group {
+    margin-right: 10px;
+}
+
+#race-select {
+    margin-top: 10px;
+    width: 102px;
+    position: relative;
+    left: 540px;
+    background-color: #c0e2c3;
+}
+
+#class-select {
+    margin-top: 10px; /* Add margin between selects */
+    width: 91px; /* Adjust width as needed */
+    position: relative;
+    left: 542px;
+    background-color: #c0e2c3;
+}
+
+#submit-button {
+    margin: 2px; /* Separate from the selects */
+    border-width: 2px;
     margin-left: 10px;
-    max-width: 150px; /* Adjust the width as needed */
+    position: relative; /* Moving the button around*/
+    left: 130px;
+    background-color: #c0e2c3;
+}
+
+#submit-box {
+    margin-top: 10px;
+    display: flex;
+
+}
+
+/* Adjusted label styles */
+label {
+    margin-right: 5px;
+    background-color: #a1d6a6; /* Background color*/
+    color: #364d38; /* Text color*/
+    font-size: 16px;
+    position: relative;
+    left: 539px;
+    border-radius: 5px; /* rounded corners */
 }
 
