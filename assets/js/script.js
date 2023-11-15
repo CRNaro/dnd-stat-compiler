@@ -18,12 +18,16 @@ function getClass(job) {
       return response.json()
     })
 
-    .then(function (localClass) {
-      // console.log(localClass)
-      classApiResults = localClass
-      console.log(localClass)
-      renderClass(localClass)
-    })
+      .then(function(localClass) {
+        // console.log(localClass)
+       classApiResults = localClass
+       console.log(localClass)
+
+       // Store CLASS in local storage
+       localStorage.setItem('userClass', JSON.stringify(classApiResults));
+       renderClass(localClass)
+      })
+    
 
     .catch((err) => {
       console.log(err);
@@ -44,11 +48,15 @@ function getRace(race) {
       return response.json()
     })
 
-    .then(function (localRace) {
-      raceApiResults = localRace
-      console.log(localRace)
-      renderRace(localRace)
-    })
+      .then(function(localRace) {
+        // console.log(localRace)
+        raceApiResults = localRace
+        console.log(localRace)
+        // Store RACE in local storage
+        localStorage.setItem('userRace', JSON.stringify(raceApiResults));
+        renderRace(localRace)
+      })
+    
 }
 
 function getSpells(spell) {
@@ -64,6 +72,7 @@ function getSpells(spell) {
     .then(function (localSpell) {
       spellApiResults = localSpell
       console.log(localSpell)
+      
       renderSpell(spellApiResults)
     })
 
@@ -85,13 +94,16 @@ function getPoem() {
     .then(function (data) {
       console.log(data)
 
-      const title = data[0].title;
-      const author = data[0].author;
-      const lines = data[0].lines.slice(0, 20).join("<br>");
+    const poem = {
+      title: data[0].title, 
+      author: data[0].author,
+      lines: data[0].lines.slice(0, 20).join("<br>")
+    };
+    document.getElementById("title").innerHTML = "Title: " + poem.title;
+    document.getElementById("author").innerHTML = "Author: " + poem.author;
+    document.getElementById("quote").innerHTML = "Lines: " + poem.lines;
 
-      document.getElementById("author").innerHTML = author;
-      document.getElementById("title").innerHTML = title;
-      document.getElementById("quote").innerHTML = lines;
+    localStorage.setItem('userPoem', JSON.stringify(poem));
 
       //let poemDisplay = document.getElementById("quote-box");
       //poemDisplay.innerHTML = data[0].lines.slice(0, 20).join("<br>"); 
@@ -104,6 +116,8 @@ function renderRace() {
   let languageDisplay = document.getElementById("language")
   let traitsDisplay = document.getElementById("traits")
   let traitsLoop = raceApiResults.traits.length
+
+
 
   raceDisplay.innerHTML = "Race: " + raceApiResults.name
   alignDisplay.innerHTML = "Alignment: " + raceApiResults.alignment
@@ -150,6 +164,8 @@ function renderSpell(){
   let userSpellsDisplay = document.getElementById("class-spells")
   let spellLoop = spellApiResults.results.length
 
+  
+
   if (spellLoop) {
     for (var i = 0; i < spellLoop; i++) {
       userSpellsDisplay.innerHTML += "  " + spellApiResults.results[i].name + "<br>"
@@ -172,16 +188,23 @@ function characterClear() {
 
 // Potential for on submit?
 
-formEl.addEventListener("submit", function (event) {
+formEl.addEventListener("submit", function(event) {
+    event.preventDefault()
+    const userClass = getUserClass.value
+    const userRace = getUserRace.value
+    console.log(userClass, userRace)
+    getSpells(userClass)
+    getClass(userClass)
+    getRace(userRace)
+    getPoem() // POEM API SECTION
+    //window.location.href = "local.html" // redirect to local.html: take out after testing
+});
 
-  event.preventDefault()
-  const userClass = getUserClass.value
-  const userRace = getUserRace.value
-  console.log(userClass, userRace)
-  getSpells(userClass)
-  getClass(userClass)
-  getRace(userRace)
-  getPoem() // POEM API SECTION
-})
+// const saveBtn= document.getElementById("save-button")
+
+// saveBtn.addEventListener("click", function(event) {
+//     window.location.href = "local.html"
+// });
+ 
 
 
