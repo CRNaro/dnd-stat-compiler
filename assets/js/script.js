@@ -24,7 +24,7 @@ function getClass(job) {
        console.log(localClass)
 
        // Store CLASS in local storage
-       localStorage.setItem('userClass', JSON.stringify(classApiResults));
+       //localStorage.setItem('userClass', JSON.stringify(classApiResults));
        renderClass(localClass)
       })
     
@@ -53,7 +53,7 @@ function getRace(race) {
         raceApiResults = localRace
         console.log(localRace)
         // Store RACE in local storage
-        localStorage.setItem('userRace', JSON.stringify(raceApiResults));
+        //localStorage.setItem('userRace', JSON.stringify(raceApiResults));
         renderRace(localRace)
       })
     
@@ -103,7 +103,7 @@ function getPoem() {
     document.getElementById("author").innerHTML = "Author: " + poem.author;
     document.getElementById("quote").innerHTML = "Lines: " + poem.lines;
 
-    localStorage.setItem('userPoem', JSON.stringify(poem));
+    //localStorage.setItem('userPoem', JSON.stringify(poem));
 
       //let poemDisplay = document.getElementById("quote-box");
       //poemDisplay.innerHTML = data[0].lines.slice(0, 20).join("<br>"); 
@@ -186,6 +186,15 @@ function characterClear() {
   document.getElementById("traits").innerHTML = "Traits:"
 }
 
+// save content 
+function saveData() {
+  localStorage.setItem("userClass", document.getElementById("class").innerHTML);
+  localStorage.setItem("userRace", document.getElementById("race").innerHTML);
+  localStorage.setItem("prof", document.getElementById("prof").innerHTML);
+  localStorage.setItem("traits", document.getElementById("traits").innerHTML);
+  localStorage.setItem("poem", document.getElementById("quote-box").innerHTML);
+}
+
 // Potential for on submit?
 
 formEl.addEventListener("submit", function(event) {
@@ -197,14 +206,16 @@ formEl.addEventListener("submit", function(event) {
     getClass(userClass)
     getRace(userRace)
     getPoem() // POEM API SECTION
+    //saveData()
     //window.location.href = "local.html" // redirect to local.html: take out after testing
 });
 
-// const saveBtn= document.getElementById("save-button")
+const saveBtn= document.getElementById("save-button")
 
-// saveBtn.addEventListener("click", function(event) {
-//     window.location.href = "local.html"
-// });
+ saveBtn.addEventListener("click", function(event) {
+  saveData()  
+  window.location.href = "local.html"
+ });
  
 
 
