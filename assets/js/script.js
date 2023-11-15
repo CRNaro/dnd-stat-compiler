@@ -25,13 +25,9 @@ function getClass(job) {
 
        // Store CLASS in local storage
        localStorage.setItem('userClass', JSON.stringify(classApiResults));
+       renderClass(localClass)
       })
-    .then(function (localClass) {
-      // console.log(localClass)
-      classApiResults = localClass
-      console.log(localClass)
-      renderClass(localClass)
-    })
+    
 
     .catch((err) => {
       console.log(err);
@@ -58,12 +54,9 @@ function getRace(race) {
         console.log(localRace)
         // Store RACE in local storage
         localStorage.setItem('userRace', JSON.stringify(raceApiResults));
+        renderRace(localRace)
       })
-    .then(function (localRace) {
-      raceApiResults = localRace
-      console.log(localRace)
-      renderRace(localRace)
-    })
+    
 }
 
 function getSpells(spell) {
@@ -79,6 +72,7 @@ function getSpells(spell) {
     .then(function (localSpell) {
       spellApiResults = localSpell
       console.log(localSpell)
+      
       renderSpell(spellApiResults)
     })
 
@@ -170,6 +164,8 @@ function renderSpell(){
   let userSpellsDisplay = document.getElementById("class-spells")
   let spellLoop = spellApiResults.results.length
 
+  
+
   if (spellLoop) {
     for (var i = 0; i < spellLoop; i++) {
       userSpellsDisplay.innerHTML += "  " + spellApiResults.results[i].name + "<br>"
@@ -204,11 +200,11 @@ formEl.addEventListener("submit", function(event) {
     //window.location.href = "local.html" // redirect to local.html: take out after testing
 });
 
-const saveBtn= document.getElementById("save-button")
+// const saveBtn= document.getElementById("save-button")
 
-saveBtn.addEventListener("click", function(event) {
-    window.location.href = "local.html"
-});
+// saveBtn.addEventListener("click", function(event) {
+//     window.location.href = "local.html"
+// });
  
 
 
