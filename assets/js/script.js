@@ -25,6 +25,9 @@ function getClass(job) {
         // console.log(localClass)
        classApiResults = localClass
        console.log(localClass)
+
+       // Store CLASS in local storage
+       localStorage.setItem('userClass', JSON.stringify(classApiResults));
       })
 }
 
@@ -45,6 +48,8 @@ function getRace(race) {
         // console.log(localRace)
         raceApiResults = localRace
         console.log(localRace)
+        // Store RACE in local storage
+        localStorage.setItem('userRace', JSON.stringify(raceApiResults));
       })
 }
 
@@ -61,13 +66,16 @@ function getPoem () {
     .then(function(data) {
     console.log(data)
 
-    const title = data[0].title;
-    const author = data[0].author;
-    const lines = data[0].lines.slice(0, 20).join("<br>");
+    const poem = {
+      title: data[0].title, 
+      author: data[0].author,
+      lines: data[0].lines.slice(0, 20).join("<br>")
+    };
+    document.getElementById("title").innerHTML = "Title: " + poem.title;
+    document.getElementById("author").innerHTML = "Author: " + poem.author;
+    document.getElementById("quote").innerHTML = "Lines: " + poem.lines;
 
-    document.getElementById("author").innerHTML = author;
-    document.getElementById("title").innerHTML = title;
-    document.getElementById("quote").innerHTML = lines;
+    localStorage.setItem('userPoem', JSON.stringify(poem));
 
     //let poemDisplay = document.getElementById("quote-box");
     //poemDisplay.innerHTML = data[0].lines.slice(0, 20).join("<br>"); 
@@ -79,9 +87,9 @@ function getPoem () {
 //});                                                      
 //}                                                       
 
-formEl.addEventListener("submit", function() {
+formEl.addEventListener("submit", function(event) {
 
-formEl.addEventListener("submit", function (event) {
+
 
     event.preventDefault()
     const userClass = getUserClass.value
@@ -90,6 +98,13 @@ formEl.addEventListener("submit", function (event) {
     getClass(userClass)
     getRace(userRace)
     getPoem() // POEM API SECTION
-})
+    //window.location.href = "local.html" // redirect to local.html: take out after testing
+});
+
+const saveBtn= document.getElementById("save-button")
+
+saveBtn.addEventListener("click", function(event) {
+    window.location.href = "local.html"
+});
 
 
