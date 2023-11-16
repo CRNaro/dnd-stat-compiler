@@ -105,7 +105,7 @@ function getPoem() {
 
     //localStorage.setItem('userPoem', JSON.stringify(poem));
 
-      //let poemDisplay = document.getElementById("quote-box");
+      let poemDisplay = document.getElementById("quote-box");
       //poemDisplay.innerHTML = data[0].lines.slice(0, 20).join("<br>"); 
     });
 }
@@ -188,11 +188,19 @@ function characterClear() {
 
 // save content 
 function saveData() {
-  localStorage.setItem("userClass", document.getElementById("class").innerHTML);
-  localStorage.setItem("userRace", document.getElementById("race").innerHTML);
-  localStorage.setItem("prof", document.getElementById("prof").innerHTML);
-  localStorage.setItem("traits", document.getElementById("traits").innerHTML);
-  localStorage.setItem("poem", document.getElementById("quote-box").innerHTML);
+  localStorage.setItem("userClass", JSON.stringify(document.getElementById("class").innerHTML));
+  localStorage.setItem("userRace", JSON.stringify(document.getElementById("race").innerHTML));  
+  localStorage.setItem("userProf", JSON.stringify(document.getElementById("prof").innerHTML));
+  localStorage.setItem("userSpell", JSON.stringify(document.getElementById("spell").innerHTML)); 
+  localStorage.setItem("userPoem", JSON.stringify(document.getElementById("quote-box").innerHTML));
+  localStorage.setItem("userAlignment", JSON.stringify(document.getElementById("alignment").innerHTML));
+  localStorage.setItem("userLanguage", JSON.stringify(document.getElementById("language").innerHTML));  
+  localStorage.setItem("userTraits", JSON.stringify(document.getElementById("traits").innerHTML));
+  //localStorage.setItem("userClass", document.getElementById("class").innerHTML);
+  //localStorage.setItem("userRace", document.getElementById("race").innerHTML);
+  //localStorage.setItem("prof", document.getElementById("prof").innerHTML);
+  //localStorage.setItem("traits", document.getElementById("traits").innerHTML);
+  //localStorage.setItem("poem", document.getElementById("quote-box").innerHTML);
 }
 
 // Potential for on submit?
