@@ -30,30 +30,33 @@ document.addEventListener("DOMContentLoaded", function() {
     savedCharacters.forEach(renderCharacter);
 
     function renderCharacter(characterData) {
-        const characterBtn = document.createElement("button");
-        characterBtn.textContent = characterData.name;
-        characterBtn.addEventListener("click", function() {
-            localStorage.setItem("", JSON.stringify(characterData));
+        const saveCharacterBtn = document.createElement("button");
+        saveCharacterBtn.innerText = characterData.name;
+        saveCharacterBtn.addEventListener("click", function() {
+            localStorage.setItem("currentCharacter", JSON.stringify(characterData));
             window.location.href = "local.html";
         });
     
-        characterList.appendChild(characterBtn);
-    }
-        // was document need savedCharacters?
+   
+        // Display the character's data on the page
     document.addEventListener("DOMContentLoaded", function() {
         const currentCharacter = JSON.parse(localStorage.getItem("currentCharacter"));
+        console.log(currentCharacter);
         
-        // Display the character's data on the page
-        document.getElementById("character-name").textContent = currentCharacter.name;
-        document.getElementById("displayClass").textContent = currentCharacter.class;
-        document.getElementById("displayRace").textContent = currentCharacter.race;
-        document.getElementById("displayProf").textContent = currentCharacter.prof;
-        document.getElementById("displaySpell").textContent = currentCharacter.spell;
-        document.getElementById("displayPoem").textContent = currentCharacter.poem;
-        document.getElementById("displayAlignment").textContent = currentCharacter.alignment;
-        document.getElementById("displayLanguage").textContent = currentCharacter.language;
-        document.getElementById("displayTraits").textContent = currentCharacter.traits;
-    });
+        document.getElementById("character-name").value = characterData.name;
+        document.getElementById("displayClass").innerText = currentData.class;
+        document.getElementById("displayRace").innerText = currentCharacter.race;
+        document.getElementById("displayProf").innerText = currentCharacter.prof;
+        document.getElementById("displaySpell").innerText = currentCharacter.spell;
+        document.getElementById("displayPoem").innerText = currentCharacter.poem;
+        document.getElementById("displayAlignment").innerText = currentCharacter.alignment;
+        document.getElementById("displayLanguage").innerText = currentCharacter.language;
+        document.getElementById("displayTraits").innerText = currentCharacter.traits;
+     });
+        
+    characterList.appendChild(saveCharacterBtn); //was characterBtn
+    //characterList.appendChild(characterBtn);
+}
 
     const returnBtn = document.getElementById("return-main")
     returnBtn.addEventListener("click", function(event) {

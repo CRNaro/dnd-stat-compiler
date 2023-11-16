@@ -152,7 +152,7 @@ function renderClass(classApiResults) {
   // Spell Display (if applicable)
   if (spellLoop) {
     for (var i = 0; i < spellLoop; i++) {
-      spellDisplay.innerHTML += "  " + classApiResults.spellcasting.info[i].name + ": " + classApiResults.spellcasting.info[i].desc + "<br>"
+      spellDisplay.innerHTML += "  " + classApiResults.spellcasting.info[i].name + ": " + classApiResults.spellcasting.info[i].desc + "<br>" + "<br>"
     }
   } else {
     spellDisplay.innerHTML = "Spell Type: Not Applicable"
