@@ -20,9 +20,10 @@
             <section id="stats-box" class="box">
                 <h3 class="title is-4 has-text-success">Stats</h3>
                 <ul class="content">
-                    <li><span id="variable1" class="has-text-green">Class:</span></li><!--Display examples for stats box-->
-                    <li><span id="variable2" class="has-text-green">Race:</span></li>
-                    <li><span id="variable3" class="has-text-green">Bonus:</span></li>
+                    <li><span id="class" class="has-text-green">Class:</span></li><!--Display examples for stats box-->
+                    <li><span id="race" class="has-text-green">Race:</span></li>
+                    <li><span id="prof" class="has-text-green">Proficiencies:</span></li>
+                    <li><span id="traits" class="has-text-green">Traits: </span></li>
                 </ul>
             </section>
         </section>
@@ -36,13 +37,14 @@
         <section id="additional-info-box" class="box">
             <h3 class="title is-4 has-text-success">Additional Information</h3>
             <ul class="content">
-                <li><span id="additional-info1" class="has-text-green">Item:</span></li>
-                <li><span id="additional-info2" class="has-text-green">Skills:</span></li>
-                <li><span id="additional-info3" class="has-text-green">Spell slots:</span></li>
+                <div id="spells-table-container"></div>
+                <li><span id="class-spells" class="has-text-green">Spells:</span></li>
+                <li><span id="language" class="has-text-green">Language:</span></li>
+                <li><span id="alignment" class="has-text-green">Alignments:</span></li>
             </ul>
         </section>
     </div>
-    <form id="select-form">
+    <form id="select-form" onsubmit="return characterClear()">
         <div id="select-box">
             <div class="select-group">
                 <label for="race-select">Race:</label>
@@ -77,10 +79,12 @@
             </div>
             <div id="submit-box">
                 <input type="submit" value="Submit" id="submit-button">
+                <button id="save-button">Save</button>
             </div>
     </form>
     </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="./assets/js/script.js"></script>
 
 </html>
