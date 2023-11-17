@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
    
         // Display the character's data on the page
     document.addEventListener("DOMContentLoaded", function() {
-        const currentCharacter = JSON.parse(localStorage.getItem("currentCharacter"));
+        const currentCharacter = JSON.parse(localStorage.getItem("userData"));
         console.log(currentCharacter);
         
         document.getElementById("character-name").value = characterData.name;
