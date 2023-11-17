@@ -24,13 +24,24 @@ body {
     margin-left: 160px;
     padding: 10px;
     border: 2px solid #000000;
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 #page-header h1, #page-header h2 {
     margin: 45px;
     color: #2f492f; /* text color */
     font-size: 42px;
+}
+
+#save-page-header {
+    margin-bottom: 50px;
+    background-color: #64a362;
+    height: 105px;
+    max-width: 1088px;
+    margin-left: 160px;
+    padding: 10px;
+    border: 2px solid #000000;
+    opacity: 0.8;
 }
 
 #content-container {
@@ -119,6 +130,16 @@ body {
     font-size: 18px;
     margin-bottom: 10px;
   }
+
+  #quote-box li {
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #c7dfc8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #4b6e4e;
+}
+
 #select-box {
     margin-left: 5px;
     display: flex;
@@ -160,6 +181,14 @@ body {
     display: flex;
 
 }
+#save-button {
+    margin: 2px; /* Separate from the selects */
+    border-width: 2px;
+    margin-left: 10px;
+    position: relative; /* Moving the button around*/
+    left: -13px;
+    background-color: #c0e2c3;
+}
 
 /* Adjusted label styles */
 label {
@@ -172,3 +201,10 @@ label {
     border-radius: 5px; /* rounded corners */
 }
 
+#return-main {
+    margin: 20px; /* Separate from the selects */
+    border-width: 2px;
+    margin-left: 10px;
+    position: relative; /* Moving the button around*/
+    background-color: #c0e2c3;
+}

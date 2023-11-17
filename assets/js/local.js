@@ -6,12 +6,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const displayedPoem = localStorage.getItem("userPoem"); //userPoem?
     
     // Display the character stats on the page
-    document.getElementById("displayClass").innerHTML = `Class: ${displayedClass}`;
-    document.getElementById("displayRace").innerHTML = `Race: ${displayedRace}`;
+    document.getElementById("displayClass").innerHTML = `${displayedClass}`;
+    document.getElementById("displayRace").innerHTML = `${displayedRace}`;
     document.getElementById("displayPoem").innerHTML = `Poem: ${displayedPoem}`;
     console.log()
     // Display poem on the page
 });
+
+
 
 const returnBtn= document.getElementById("return-main")
 
