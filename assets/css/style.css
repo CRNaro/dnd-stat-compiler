@@ -5,6 +5,9 @@
     src: url(); /*add path to font file*/
 }
 
+
+
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -172,3 +175,28 @@ label {
     border-radius: 5px; /* rounded corners */
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Character page - CRN*/
+.character-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    height: auto;
+    color: white;
+
+}

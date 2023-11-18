@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <title>API Data Display</title>
-    <link rel="styleshee" href="//cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">   
 </head>
 <body>
@@ -14,45 +14,13 @@
         <h1>Saved Characters</h1>
     </header>
    
-    <div id="content-container"> 
-        <section id="stats-box">
-            <ul>
-                <li><span id="displayClass">Class:</span></li>
-                <li><span id="displayRace">Race:</span></li>
-                <li><span id="displayProf">Proficiencies:</span></li>
-                <li><span id="displayTraits">Traits: </span></li>
-            </ul>
-        </section>
-        <section id="quote-box">
-            <span id="displayPoem"></span>
-            <span id="displayAuthor"></span>
-            <br>
-            <span id="displayQuote"></span>
-            <p id="title"></p>
-            <p id="author"></p>
-            <br>
-            <p id="quote"></p>
-        </section> 
-        <section id="additional-info-box" class="box">
-            <h3 class="title is-4 has-text-success">Additional Information</h3>
-            <ul class="content">
-                <li><span id="displaySpell" class="has-text-green">Spell Types:</span></li>
-                <li><span id="class-spells" class="has-text-green">Spells:</span></li>
-                <li><span id="displayLanguage" class="has-text-green">Language:</span></li>
-                <li><span id="displayAlignment" class="has-text-green">Alignments:</span></li>
-            </ul>
-        </section>
+    <div id="character-container"> 
+  
        
         
         </div>
     <input type="button" value="Return" id="return-main">  
-    <div id="save-character">
-        <label for="character-name">Character Name:</label>
-        <input type="text" id="character-name" name="character-name" placeholder="Enter Character Name">
-        <button id="save-character-btn">Save Character</button>
-        <ul id="character-list">
-        </ul>
-    </div>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>    
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
