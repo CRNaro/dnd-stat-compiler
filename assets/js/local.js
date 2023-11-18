@@ -1,65 +1,133 @@
 // JS FOR OUR SAVE TO LOCAL STORAGE FUNCTIONALITY
 
-//second try at this
-document.addEventListener("DOMContentLoaded", function() {
-    const saveCharacterBtn = document.getElementById("save-character-btn");
-    const characterList = document.getElementById("character-list");
-    const savedCharacters = JSON.parse(localStorage.getItem("savedCharacters")) || [];
 
+const characterList = document.getElementById("character-container");
+// Getting data from local storage
+const userData = JSON.parse(localStorage.getItem("userData")) || []; //allChars = userData
+// Display on page
+const display = document.getElementById("character-container");
+for (let i = 0; i < userData.length; i++) {
+    const char = userData[i];
 
-    saveCharacterBtn.addEventListener("click", function(event) {
-        const characterName = document.getElementById("character-name").value;
-        if (characterName) {
-            const characterData = {
-                class: document.getElementById("displayClass").innerText.trim(),
-                race: document.getElementById("displayRace").innerText.trim(),
-                prof: document.getElementById("displayProf").innerText.trim(),
-                spell: document.getElementById("displaySpell").innerText.trim(),
-                poem: document.getElementById("displayPoem").innerText.trim(),
-                alignment: document.getElementById("displayAlignment").innerText.trim(),
-                language: document.getElementById("displayLanguage").innerText.trim(),
-                traits: document.getElementById("displayTraits").innerText.trim(),
-                name: characterName
-            };
+    const charDiv = document.createElement("div");
     
-            savedCharacters.push(characterData);
-            localStorage.setItem("savedCharacters", JSON.stringify(savedCharacters));
-            renderCharacter(characterData);
-        }
-    });
-    savedCharacters.forEach(renderCharacter);
-
-    function renderCharacter(characterData) {
-        const saveCharacterBtn = document.createElement("button");
-        saveCharacterBtn.innerText = characterData.name;
-        saveCharacterBtn.addEventListener("click", function() {
-            localStorage.setItem("currentCharacter", JSON.stringify(characterData));
-            window.location.href = "local.html";
-        });
     
    
-        // Display the character's data on the page
-    document.addEventListener("DOMContentLoaded", function() {
-        const currentCharacter = JSON.parse(localStorage.getItem("userData"));
-        console.log(currentCharacter);
-        
-        document.getElementById("character-name").value = characterData.name;
-        document.getElementById("displayClass").innerText = currentData.class;
-        document.getElementById("displayRace").innerText = currentCharacter.race;
-        document.getElementById("displayProf").innerText = currentCharacter.prof;
-        document.getElementById("displaySpell").innerText = currentCharacter.spell;
-        document.getElementById("displayPoem").innerText = currentCharacter.poem;
-        document.getElementById("displayAlignment").innerText = currentCharacter.alignment;
-        document.getElementById("displayLanguage").innerText = currentCharacter.language;
-        document.getElementById("displayTraits").innerText = currentCharacter.traits;
-     });
-        
-    characterList.appendChild(saveCharacterBtn); //was characterBtn
-    //characterList.appendChild(characterBtn);
+    // Create a new div for each character
+  const nameDiv = document.createElement("div");
+  nameDiv.innerHTML = `<p>${char.name}</p>`;
+  nameDiv.style.color = "white";
+  nameDiv.style.cursor = "pointer";
+  nameDiv.style.fontSize = "20px";
+  charDiv.appendChild(nameDiv);
+// Delete button
+  const deleteBtn = document.createElement("button");
+    deleteBtn.innerHTML = "Delete";
+    deleteBtn.style.color = "red";
+    deleteBtn.style.backgroundColor = "black";
+    deleteBtn.style.border = "1px solid white"; // Add a border to create a box
+    deleteBtn.style.padding = "2px"; // Add some padding
+    deleteBtn.style.float = "right";
+    deleteBtn.style.marginTop = "-25px";
+    
+    deleteBtn.addEventListener("click", function(event) {
+        characterList.removeChild(charDiv);
+        // Remove from local storage
+        userData.splice(i, 1);
+        // Update/Save empty array to local storage
+        localStorage.setItem("userData", JSON.stringify(userData));
+    });
+    charDiv.appendChild(deleteBtn);
+
+  // div for class and race
+  const classRaceDiv = document.createElement("div");
+    classRaceDiv.innerHTML = `
+    <p>Class: ${char.userClass}</p>
+    <p>Race: ${char.userRace}</p>
+    `;
+    classRaceDiv.style.color = "white";
+    classRaceDiv.style.border = "1px solid white"; // Add a border to create a box
+    classRaceDiv.style.padding = "10px"; // Add some padding
+    classRaceDiv.style.marginTop = "10px";
+    charDiv.appendChild(classRaceDiv);
+    
+   
+
+    // div for proficiencies and spells
+    const profSpellDiv = document.createElement("div");
+    profSpellDiv.innerHTML = `
+    <p> ${char.userProf}</p>
+    <p> ${char.userSpell}</p>
+`;
+classRaceDiv.style.color = "white";
+    profSpellDiv.style.color = "white";
+    profSpellDiv.style.border = "1px solid white"; // Add a border to create a box
+    profSpellDiv.style.padding = "10px"; // Add some padding
+    profSpellDiv.style.marginTop = "10px";
+
+     
+charDiv.appendChild(profSpellDiv);
+    // div for alignment and languages
+    const alignLangDiv = document.createElement("div");
+    alignLangDiv.innerHTML = `
+    <p> ${char.userAlignment}</p>
+    <p> ${char.userLanguage}</p>
+    `;
+    alignLangDiv.style.color = "white";
+    alignLangDiv.style.border = "1px solid white"; // Add a border to create a box
+    alignLangDiv.style.padding = "10px"; // Add some padding
+    alignLangDiv.style.marginTop = "10px";
+    charDiv.appendChild(alignLangDiv);
+    // div for traits 
+    const traitsDiv = document.createElement("div");
+    traitsDiv.innerHTML = `
+    <p> ${char.userTraits}</p>`;
+    traitsDiv.style.color = "white";
+    traitsDiv.style.border = "1px solid white"; // Add a border to create a box
+    traitsDiv.style.padding = "10px"; // Add some padding
+    traitsDiv.style.marginTop = "10px";
+
+    charDiv.appendChild(traitsDiv);
+    // div for poem
+    const poemDiv = document.createElement("div");
+    poemDiv.innerHTML = `
+    <p> ${char.userPoem}</p>`;
+    poemDiv.style.color = "white";
+    poemDiv.style.border = "1px solid white"; // Add a border to create a box
+    poemDiv.style.padding = "10px"; // Add some padding
+    poemDiv.style.marginTop = "10px";
+
+    charDiv.appendChild(poemDiv);
+    
+    // Append the new div to the container
+    characterList.appendChild(charDiv);
+// Assuming nameDiv is the div containing the character name
+classRaceDiv.style.display = "none";
+profSpellDiv.style.display = "none";
+alignLangDiv.style.display = "none";
+traitsDiv.style.display = "none";
+poemDiv.style.display = "none";
+
+nameDiv.addEventListener("click", function() {
+    if (classRaceDiv.style.display === "none") {
+        classRaceDiv.style.display = "block";
+        profSpellDiv.style.display = "block";
+        alignLangDiv.style.display = "block";
+        traitsDiv.style.display = "block";
+        poemDiv.style.display = "block";
+    } else {
+        classRaceDiv.style.display = "none";
+        profSpellDiv.style.display = "none";
+        alignLangDiv.style.display = "none";
+        traitsDiv.style.display = "none";
+        poemDiv.style.display = "none";
+    }
+});
+
 }
 
     const returnBtn = document.getElementById("return-main")
     returnBtn.addEventListener("click", function(event) {
         window.location.href = "index.html";
+        
     });
-});

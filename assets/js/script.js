@@ -1,4 +1,6 @@
 // This is our javascript file for our application
+
+
 const getUserClass = document.getElementById("class-select")
 const getUserRace = document.getElementById("race-select")
 
@@ -189,6 +191,7 @@ function characterClear() {
 // save content 
 function saveData() {
   const userData = {
+      name: document.getElementById("character-name").value,
       userClass: document.getElementById("class").innerHTML,
       userRace: document.getElementById("race").innerHTML,
       userProf: document.getElementById("prof").innerHTML,
