@@ -71,7 +71,7 @@ body {
     color: #a1d6a6;
     font-size: 18px;
     margin-bottom: 10px;
-  }
+}
 
 #stats-box ul {
     list-style-type: none;
@@ -93,26 +93,26 @@ body {
     border: 2px solid #0c0a0a;
     max-width: 700px;
     color: #4b6e4e;
-  }
-  
-  #additional-info-box h3 {
+}
+
+#additional-info-box h3 {
     color: #a1d6a6;
     font-size: 18px;
     margin-bottom: 10px;
-  }
-  
-  #additional-info-box ul {
+}
+
+#additional-info-box ul {
     list-style-type: none;
     padding: 0;
-  }
-  
-  #additional-info-box li {
+}
+
+#additional-info-box li {
     margin-bottom: 10px;
     padding: 5px;
     background-color: #c7dfc8;
     border: 1px solid #ddd;
     border-radius: 5px;
-  }
+}
 
 #quote-box {
     background-color: #17973d;
@@ -129,9 +129,9 @@ body {
     color: #a1d6a6;
     font-size: 18px;
     margin-bottom: 10px;
-  }
+}
 
-  #quote-box li {
+#quote-box li {
     margin-bottom: 10px;
     padding: 5px;
     background-color: #c7dfc8;
@@ -140,54 +140,70 @@ body {
     color: #4b6e4e;
 }
 
+#select-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #select-box {
-    margin-left: 5px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#race-select {
+    margin-bottom: 10px; /* Add margin between race and class selects */
+    width: 200px;
+    background-color: #c0e2c3;
+}
+
+#class-select {
+    margin-top: 10px; /* Add margin between race and class selects */
+    width: 200px;
+    background-color: #c0e2c3;
+}
+
+#submit-box {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.select-group {
-    margin-right: 10px;
-}
-
-#race-select {
-    margin-top: 10px;
-    width: 102px;
-    position: relative;
-    left: 540px;
-    background-color: #c0e2c3;
-}
-
-#class-select {
-    margin-top: 10px; /* Add margin between selects */
-    width: 91px; /* Adjust width as needed */
-    position: relative;
-    left: 542px;
-    background-color: #c0e2c3;
-}
-
 #submit-button {
-    margin: 2px; /* Separate from the selects */
+    margin: 2px;
     border-width: 2px;
-    margin-left: 10px;
-    position: relative; /* Moving the button around*/
-    left: 130px;
-    background-color: #c0e2c3;
+    background-color: #c0e2c3; /* Green color for success */
+    border-color: #255235; /* Matching border color */
+    color: #050404; /* Text color */
+    margin-left: 234px; /* Add margin between the dropdowns and the submit button */
+    margin-top: -66px;
 }
 
-#submit-box {
-    margin-top: 10px;
-    display: flex;
-
-}
 #save-button {
-    margin: 2px; /* Separate from the selects */
+    margin: 2px;
     border-width: 2px;
-    margin-left: 10px;
-    position: relative; /* Moving the button around*/
-    left: -13px;
     background-color: #c0e2c3;
+    margin-left: 400px; /* This will push the button to the right */
+}
+
+#save-button.is-success {
+    background-color: #c0e2c3; /* Green color for success */
+    border-color: #255235; /* Matching border color */
+    color: #050404; /* Text color */
+}
+
+#save-character {
+    margin-left: -50px; /* Adjust as needed */
+    margin-bottom: -29px;
+    margin-top: 42px;
+}
+
+#save-character-btn {
+    background-color: #c0e2c3; /* Green color for success */
+    border-color: #255235; /* Matching border color */
+    color: #050404;
 }
 
 /* Adjusted label styles */
@@ -197,14 +213,50 @@ label {
     color: #364d38; /* Text color*/
     font-size: 16px;
     position: relative;
-    left: 539px;
+    left: 7px;
     border-radius: 5px; /* rounded corners */
 }
 
 #return-main {
-    margin: 20px; /* Separate from the selects */
-    border-width: 2px;
-    margin-left: 10px;
-    position: relative; /* Moving the button around*/
-    background-color: #c0e2c3;
+    margin: 20px 10px; /* Adjust margin as needed */
+    padding: 5px 10px; /* Adjust padding as needed */
+    border: 2px solid #255235; /* Matching border color */
+    background-color: #c0e2c3; /* Green color for success */
+    color: #050404; /* Text color */
+    border-radius: 5px; /* rounded corners */
+    cursor: pointer; /* Show pointer cursor on hover */
+}
+
+#return-main:hover {
+    background-color: #a1d6a6; /* Change color on hover */
+}
+
+#class-spells {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+#class-spells li {
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #c7dfc8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #4b6e4e;
+}
+
+.spells-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start (left) */
+}
+
+.spells-container li {
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #c7dfc8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #4b6e4e;
 }

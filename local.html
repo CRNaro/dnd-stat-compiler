@@ -7,30 +7,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>API Data Display</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 
 <body>
     <header id="save-page-header">
         <h1>Saved Characters</h1>
     </header>
+
     <div id="content-container">
         <section id="stats-box">
             <ul>
                 <li><span id="displayClass">Class:</span></li>
                 <li><span id="displayRace">Race:</span></li>
+                <li><span id="displayProf">Proficiencies:</span></li>
+                <li><span id="displayTraits">Traits: </span></li>
             </ul>
         </section>
         <section id="quote-box">
-            <h3 class="title is-4 has-text-success">Quote</h3>
-            <p id="title" class="has-text-weight-bold"></p>
-            <p id="author" class="has-text-weight-bold"></p>
+            <span id="displayPoem"></span>
+            <span id="displayAuthor"></span>
             <br>
-            <p id="displayPoem" class="is-italic"></p>
+            <span id="displayQuote"></span>
+            <p id="title"></p>
+            <p id="author"></p>
+            <br>
+            <p id="quote"></p>
         </section>
+        <section id="additional-info-box" class="box">
+            <h3 class="title is-4 has-text-success">Additional Information</h3>
+            <ul class="content">
+                <li><span id="displaySpell" class="has-text-green">Spell Types:</span></li>
+                <li><span id="class-spells" class="has-text-green">Spells:</span></li>
+                <li><span id="displayLanguage" class="has-text-green">Language:</span></li>
+                <li><span id="displayAlignment" class="has-text-green">Alignments:</span></li>
+            </ul>
+        </section>
+
+
     </div>
-    <input type="button" value="Return" id="return-main">
+    <div class="columns is-centered">
+        <div class="column is-half">
+            <input type="button" value="Return" id="return-main" class="button is-primary">
+        </div>
+    </div>
+    <div id="save-character">
+        <input type="text" id="character-name" name="character-name" placeholder="Enter Character Name">
+        <button id="save-character-btn" class="button is-success">Save Character</button>
+        <ul id="character-list">
+        </ul>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
     <script src="./assets/js/local.js"></script>
 
 </body>

@@ -105,7 +105,7 @@ function getPoem() {
 
     //localStorage.setItem('userPoem', JSON.stringify(poem));
 
-      //let poemDisplay = document.getElementById("quote-box");
+      let poemDisplay = document.getElementById("quote-box");
       //poemDisplay.innerHTML = data[0].lines.slice(0, 20).join("<br>"); 
     });
 }
@@ -152,7 +152,7 @@ function renderClass(classApiResults) {
   // Spell Display (if applicable)
   if (spellLoop) {
     for (var i = 0; i < spellLoop; i++) {
-      spellDisplay.innerHTML += "  " + classApiResults.spellcasting.info[i].name + ": " + classApiResults.spellcasting.info[i].desc + "<br>" + "<br>";
+      spellDisplay.innerHTML += "  " + classApiResults.spellcasting.info[i].name + ": " + classApiResults.spellcasting.info[i].desc + "<br>" + "<br>"
     }
   } else {
     spellDisplay.innerHTML = "Spell Type: Not Applicable"
@@ -168,7 +168,8 @@ function renderSpell(){
 
   if (spellLoop) {
     for (var i = 0; i < spellLoop; i++) {
-      userSpellsDisplay.innerHTML += "  " + spellApiResults.results[i].name + "<br>"
+      userSpellsDisplay.innerHTML += `<p>${spellApiResults.results[i].name}</p>`
+      
     }
   } else {
     userSpellsDisplay.innerHTML = "Spells: Not Applicable"
@@ -179,7 +180,7 @@ function characterClear() {
   document.getElementById("class").innerHTML = "Class:"
   document.getElementById("prof").innerHTML = "Proficiencies:"
   document.getElementById("spell").innerHTML = "Spell Types:"
-  document.getElementById("class-spells").innerHTML = "Spells:"
+  document.getElementById("class-spells").innerHTML = ""
   document.getElementById("race").innerHTML = "Race:"
   document.getElementById("alignment").innerHTML = "Alignment:"
   document.getElementById("language").innerHTML = "Languages:"
@@ -188,12 +189,24 @@ function characterClear() {
 
 // save content 
 function saveData() {
-  localStorage.setItem("userClass", document.getElementById("class").innerHTML);
-  localStorage.setItem("userRace", document.getElementById("race").innerHTML);
-  localStorage.setItem("prof", document.getElementById("prof").innerHTML);
-  localStorage.setItem("traits", document.getElementById("traits").innerHTML);
-  localStorage.setItem("poem", document.getElementById("quote-box").innerHTML);
+  const userData = {
+      userClass: document.getElementById("class").innerHTML,
+      userRace: document.getElementById("race").innerHTML,
+      userProf: document.getElementById("prof").innerHTML,
+      userSpell: document.getElementById("spell").innerHTML,
+      userPoem: document.getElementById("quote-box").innerHTML,
+      userAlignment: document.getElementById("alignment").innerHTML,
+      userLanguage: document.getElementById("language").innerHTML,
+      userTraits: document.getElementById("traits").innerHTML
+  };
+
+  const allChars = JSON.parse(localStorage.getItem("userData")) || [];
+
+  allChars.push(userData);
+
+  localStorage.setItem("userData", JSON.stringify(allChars));
 }
+
 
 // Potential for on submit?
 
