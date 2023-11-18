@@ -3,7 +3,7 @@
 
 const characterList = document.getElementById("character-container");
 // Getting data from local storage
-const userData = JSON.parse(localStorage.getItem("userData")) || []; //allChars = userData
+const userData = JSON.parse(localStorage.getItem("userData")) || []; 
 // Display on page
 const display = document.getElementById("character-container");
 for (let i = 0; i < userData.length; i++) {
