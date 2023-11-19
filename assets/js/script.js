@@ -1,6 +1,4 @@
 // This is our javascript file for our application
-
-
 const getUserClass = document.getElementById("class-select")
 const getUserRace = document.getElementById("race-select")
 
@@ -192,7 +190,7 @@ function characterClear() {
 // save content 
 function saveData() {
   const userData = {
-      name: document.getElementById("character-name").value,
+    name: document.getElementById("character-name").value,
       userClass: document.getElementById("class").innerHTML,
       userRace: document.getElementById("race").innerHTML,
       userProf: document.getElementById("prof").innerHTML,
@@ -208,6 +206,20 @@ function saveData() {
   allChars.push(userData);
 
   localStorage.setItem("userData", JSON.stringify(allChars));
+}
+
+function showModal(message) {
+  const modal = document.getElementById('myModal');
+  const modalText = document.getElementById('modalText');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+
+  modalText.textContent = message;
+  modal.style.display = 'block';
+
+  // Close modal when the "OK" button is clicked
+  closeModalBtn.addEventListener('click', function() {
+    modal.style.display = 'none';
+  });
 }
 
 
@@ -228,10 +240,17 @@ formEl.addEventListener("submit", function(event) {
 
 const saveBtn= document.getElementById("save-button")
 
- saveBtn.addEventListener("click", function(event) {
-  saveData()  
-  window.location.href = "local.html"
- });
- 
+saveBtn.addEventListener("click", function(event) {
+  const inputField = document.querySelector('input');
+  // const adventurerForm = document.querySelector('#selectform');
+  if (inputField.value === '') {
+    showModal('Please name your adventurer!');
+  // } else if(!adventurerForm || !adventurerForm.checkValidity()){
+  //   showModal("Please select a Race and Class!")
+  } else {
+    saveData();
+    window.location.href = "local.html";
+  }
+});
 
 
