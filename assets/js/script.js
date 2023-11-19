@@ -168,7 +168,8 @@ function renderSpell(){
 
   if (spellLoop) {
     for (var i = 0; i < spellLoop; i++) {
-      userSpellsDisplay.innerHTML += "  " + spellApiResults.results[i].name + "<br>"
+      userSpellsDisplay.innerHTML += `<p>${spellApiResults.results[i].name}</p>`
+      
     }
   } else {
     userSpellsDisplay.innerHTML = "Spells: Not Applicable"
@@ -179,7 +180,7 @@ function characterClear() {
   document.getElementById("class").innerHTML = "Class:"
   document.getElementById("prof").innerHTML = "Proficiencies:"
   document.getElementById("spell").innerHTML = "Spell Types:"
-  document.getElementById("class-spells").innerHTML = "Spells:"
+  document.getElementById("class-spells").innerHTML = ""
   document.getElementById("race").innerHTML = "Race:"
   document.getElementById("alignment").innerHTML = "Alignment:"
   document.getElementById("language").innerHTML = "Languages:"

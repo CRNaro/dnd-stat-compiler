@@ -1,22 +1,23 @@
-/* This is our main stylesheet */   
+/* This is our main stylesheet */
 /*Ex. adding downloaded font files to this project*/
 @font-face {
-    font-family: 'Arial, sans-serif'; /*add font name*/
-    src: url(); /*add path to font file*/
+    font-family: 'Arial, sans-serif';
+    /*add font name*/
+    src: url();
+    /*add path to font file*/
 }
-
-
-
 
 body {
     font-family: Arial, sans-serif;
     text-align: center;
     height: 100%;
     /* background image */
-    background-image: url('https://images.ctfassets.net/swt2dsco9mfe/2tUJTVIdSiWIs9uNn9VGoC/2d70a1b9de8a84aba8c248da04fa991d/1280x960-terrain-wa.jpg?q=70&fit=thumb&w=1280&h=960&fm=avif'); 
-    background-size: cover; /* Ensures the image covers the entire background */
+    background-image: url('https://images.ctfassets.net/swt2dsco9mfe/2tUJTVIdSiWIs9uNn9VGoC/2d70a1b9de8a84aba8c248da04fa991d/1280x960-terrain-wa.jpg?q=70&fit=thumb&w=1280&h=960&fm=avif');
+    background-size: cover;
+    /* Ensures the image covers the entire background */
     background-repeat: no-repeat;
-    min-height: 150vh; /* Prevents the image from repeating */
+    min-height: 150vh;
+    /* Prevents the image from repeating */
 }
 
 #page-header {
@@ -27,25 +28,40 @@ body {
     margin-left: 160px;
     padding: 10px;
     border: 2px solid #000000;
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
-#page-header h1, #page-header h2 {
+#page-header h1,
+#page-header h2 {
     margin: 45px;
-    color: #2f492f; /* text color */
+    color: #2f492f;
+    /* text color */
     font-size: 42px;
+}
+
+#save-page-header {
+    margin-bottom: 50px;
+    background-color: #64a362;
+    height: 105px;
+    max-width: 1088px;
+    margin-left: 160px;
+    padding: 10px;
+    border: 2px solid #000000;
+    opacity: 0.8;
 }
 
 #content-container {
     display: flex;
-    justify-content: center; /* Adjust space between stats and quote */
+    justify-content: center;
+    /* Adjust space between stats and quote */
 }
 
 #stats-quote-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px; /* Adjust the space between stats and quote boxes */
+    gap: 20px;
+    /* Adjust the space between stats and quote boxes */
     height: auto
 }
 
@@ -63,7 +79,7 @@ body {
     color: #a1d6a6;
     font-size: 18px;
     margin-bottom: 10px;
-  }
+}
 
 #stats-box ul {
     list-style-type: none;
@@ -85,26 +101,26 @@ body {
     border: 2px solid #0c0a0a;
     max-width: 700px;
     color: #4b6e4e;
-  }
-  
-  #additional-info-box h3 {
+}
+
+#additional-info-box h3 {
     color: #a1d6a6;
     font-size: 18px;
     margin-bottom: 10px;
-  }
-  
-  #additional-info-box ul {
+}
+
+#additional-info-box ul {
     list-style-type: none;
     padding: 0;
-  }
-  
-  #additional-info-box li {
+}
+
+#additional-info-box li {
     margin-bottom: 10px;
     padding: 5px;
     background-color: #c7dfc8;
     border: 1px solid #ddd;
     border-radius: 5px;
-  }
+}
 
 #quote-box {
     background-color: #17973d;
@@ -112,7 +128,8 @@ body {
     border: 2px solid #0c0a0a;
     margin-right: 25px;
     margin-left: 25px;
-    max-width: 1000px; /* Adjust the width as needed */
+    max-width: 1000px;
+    /* Adjust the width as needed */
     min-width: 300px;
     color: #a1d6a6;
 }
@@ -121,58 +138,84 @@ body {
     color: #a1d6a6;
     font-size: 18px;
     margin-bottom: 10px;
-  }
+}
+
+#quote-box li {
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #c7dfc8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #4b6e4e;
+}
+
+#select-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #select-box {
-    margin-left: 5px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#race-select {
+    margin-bottom: 10px;
+    /* Add margin between race and class selects */
+    width: 200px;
+    background-color: #c0e2c3;
+}
+
+#class-select {
+    margin-top: 10px;
+    /* Add margin between race and class selects */
+    width: 200px;
+    background-color: #c0e2c3;
+}
+
+.control {
+    position: relative;
+    left: 260px;
+}
+
+.select {
+    display: inline-block;
+    max-width: 100%;
+    position: relative;
+    left: -200px;
+    vertical-align: top;
+}
+
+#submit-box {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.select-group {
-    margin-right: 10px;
-}
-
-#race-select {
-    margin-top: 10px;
-    width: 102px;
-    position: relative;
-    left: 540px;
-    background-color: #c0e2c3;
-}
-
-#class-select {
-    margin-top: 10px; /* Add margin between selects */
-    width: 91px; /* Adjust width as needed */
-    position: relative;
-    left: 542px;
-    background-color: #c0e2c3;
-}
-
 #submit-button {
-    margin: 2px; /* Separate from the selects */
+    margin: 2px;
     border-width: 2px;
-    margin-left: 10px;
-    position: relative; /* Moving the button around*/
-    left: 130px;
     background-color: #c0e2c3;
+    /* Green color for success */
+    border-color: #255235;
+    /* Matching border color */
+    color: #050404;
+    /* Text color */
+    margin-left: 530px;
+    /* Add margin between the dropdowns and the submit button */
+    margin-top: -66px;
 }
 
-#submit-box {
-    margin-top: 10px;
-    display: flex;
 
-}
-
-/* Adjusted label styles */
-label {
-    margin-right: 5px;
-    background-color: #a1d6a6; /* Background color*/
-    color: #364d38; /* Text color*/
-    font-size: 16px;
-    position: relative;
-    left: 539px;
-    border-radius: 5px; /* rounded corners */
+#save-button {
+    margin: 2px;
+    border-width: 2px;
+    background-color: #c0e2c3;
+    margin-left: 291px;
+    /* This will push the button to the right */
 }
 
 #myModal {
@@ -189,26 +232,160 @@ label {
   }
 
 
+#save-button.is-success {
+    background-color: #c0e2c3;
+    /* Green color for success */
+    border-color: #255235;
+    /* Matching border color */
+    color: #050404;
+    /* Text color */
+}
 
+#save-character {
+    margin-left: 30px;
+    /* Adjust as needed */
+    margin-bottom: -29px;
+    margin-top: 42px;
+}
 
+#save-character-btn {
+    background-color: #c0e2c3;
+    /* Green color for success */
+    border-color: #255235;
+    /* Matching border color */
+    color: #050404;
+}
 
-
-
-
-
-
-
-
-
-
-
-/*Character page - CRN*/
-.character-container {
+.label-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-    height: auto;
-    color: white;
+    /* Center horizontally */
+}
 
+/* Adjusted label styles */
+.label {
+    margin-right: 5px;
+    background-color: #a1d6a6;
+    /* Background color*/
+    color: #364d38;
+    /* Text color*/
+    font-size: 16px;
+    border-radius: 5px;
+    /* rounded corners */
+}
+
+#return-main {
+    margin: 20px 10px;
+    /* Adjust margin as needed */
+    padding: 5px 10px;
+    /* Adjust padding as needed */
+    border: 2px solid #255235;
+    /* Matching border color */
+    background-color: #c0e2c3;
+    /* Green color for success */
+    color: #050404;
+    /* Text color */
+    border-radius: 5px;
+    /* rounded corners */
+    cursor: pointer;
+    /* Show pointer cursor on hover */
+}
+
+#return-main:hover {
+    background-color: #a1d6a6;
+    /* Change color on hover */
+}
+
+#class-spells {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+#class-spells li {
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #c7dfc8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #4b6e4e;
+}
+
+.spells-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Align items to the start (left) */
+}
+
+.spells-container li {
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #c7dfc8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #4b6e4e;
+}
+
+/* Media screen shrinkage */
+@media screen and (max-width: 768px) {
+    #page-header {
+        margin-left: 0;
+    }
+
+    #content-container {
+        flex-direction: column;
+    }
+
+    #stats-quote-container {
+        order: 2;
+    }
+
+    #stats-box,
+    #quote-box,
+    #additional-info-box {
+        width: 100%;
+        /* Make each box take up the full width of the screen */
+    }
+
+    /* Adjust styles for smaller screens */
+    #select-box {
+        flex-direction: column;
+        /* Stack elements vertically */
+        align-items: center;
+    }
+
+    #submit-box {
+        margin-top: 10px;
+        /* Add spacing between elements */
+        position: relative;
+    }
+
+    #save-button {
+        margin-left: 0;
+        /* Reset margin for buttons */
+        margin-top: 35px;
+        /* Add spacing between buttons */
+    }
+
+    #race-select, #class-select {
+        position: static;
+        margin-top: 10px;
+        margin-left: -95px;
+    }
+
+      /* Center labels under the save button */
+    .label-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        left: 155px;
+    }
+
+    #submit-button {
+        margin: 5px;
+        position: relative;
+        left: 155px;
+    }
 }

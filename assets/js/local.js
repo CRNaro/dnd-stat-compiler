@@ -23,9 +23,9 @@ for (let i = 0; i < userData.length; i++) {
 // Delete button
   const deleteBtn = document.createElement("button");
     deleteBtn.innerHTML = "Delete";
-    deleteBtn.style.color = "red";
-    deleteBtn.style.backgroundColor = "black";
-    deleteBtn.style.border = "1px solid white"; // Add a border to create a box
+    deleteBtn.style.color = "green";
+    deleteBtn.style.backgroundColor = "light-green";
+    deleteBtn.style.border = "1px solid black"; // Add a border to create a box
     deleteBtn.style.padding = "2px"; // Add some padding
     deleteBtn.style.float = "right";
     deleteBtn.style.marginTop = "-25px";
