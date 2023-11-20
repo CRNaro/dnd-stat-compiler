@@ -50,7 +50,7 @@
         <div class="container">
             <form id="select-form" onsubmit="return characterClear()" class="field is-grouped">
                 <div id="save-character">
-                    <input type="text" id="character-name" name="character-name" placeholder="Enter Character Name">
+                    <input type="text" id="character-name" class="textbox" name="character-name" placeholder="Enter Character Name">
                 </div>
                 <button id="save-button" class="button is-success">Save</button>
         </div>
@@ -106,6 +106,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
         <div class="columns is-centered">
             <div class="column is-half">
@@ -117,7 +118,14 @@
         </form>
         </div>
 
-    </section>
+    </section>       
+    </form>
+    <div id="myModal">
+        <p id="modalText"></p>
+        <button id="closeModalBtn">OK</button>
+      </div>
+    </div>
+
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="./assets/js/script.js"></script>
