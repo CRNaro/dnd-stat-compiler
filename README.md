@@ -2,6 +2,7 @@
 
 This project is a Dungeons & Dragons (D&D) Character Stat Compiler that allows users to select a class, race, and displays relevant information about the chosen character. It also includes a feature to generate a random poem for added flair.
 
+<img src="Develop/Images/Demo.png"/>
 
 ## Features
 
