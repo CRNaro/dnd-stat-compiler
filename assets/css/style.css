@@ -253,6 +253,7 @@ body {
     margin-right: 5px;
     background-color: #a1d6a6;
     /* Background color*/
+    display: inline;
     color: #364d38;
     /* Text color*/
     font-size: 16px;
