@@ -174,7 +174,7 @@ function renderSpell(){
       
     }
   } else {
-    userSpellsDisplay.innerHTML = "Spells: Not Applicable"
+    userSpellsDisplay.innerHTML = "Not Applicable"
   }
 }
 
