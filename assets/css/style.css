@@ -270,6 +270,7 @@ body {
     /* Background color*/
     color: #364d38;
     /* Text color*/
+    display: inline;
     font-size: 16px;
     border-radius: 5px;
     /* rounded corners */
