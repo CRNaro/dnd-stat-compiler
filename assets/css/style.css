@@ -214,7 +214,7 @@ body {
     margin: 2px;
     border-width: 2px;
     background-color: #c0e2c3;
-    margin-left: 291px;
+    margin-left: 450px;
     /* This will push the button to the right */
 }
 
@@ -326,6 +326,11 @@ body {
     border: 1px solid #ddd;
     border-radius: 5px;
     color: #4b6e4e;
+}
+
+.textbox {
+    left: -47px;
+    position: relative;
 }
 
 /* Media screen shrinkage */
